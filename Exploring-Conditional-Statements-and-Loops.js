@@ -1,31 +1,31 @@
 let login = true;
 
-if (login)
-{
-    console.log("Thank you for logining in.")    
-}
-else
-{
-    console.log("Please log in to continue.")
+if (login) {
+    console.log("Thank you for logging in.");    
+} else {
+    console.log("Please log in to continue.");
 }
 
-const items = ["milk", "bread", "honey"]
-for (const food in items) {
-    console.log("Items:", items[food])
+const items = ["milk", "bread", "honey"];
+for (const food of items) {
+    console.log("Items:", food);
 }
 
 let cart = {};
 
-function addToCart(product)
-{
-    if (cart[product])
-        { 
-            cart[product]++;
-        }
-    else{
-            cart[product] = 1
-        }
-}   
+function addToCart(product) {
+    if (cart[product]) { 
+        cart[product]++;
+    } else {
+        cart[product] = 1;
+    }
+}
+
+const products = [
+    { name: "milk", price: 1.5 },
+    { name: "bread", price: 2.0 },
+    { name: "honey", price: 3.5 }
+];
 
 function calculateTotalPrice() {
     let total = 0;
@@ -35,10 +35,18 @@ function calculateTotalPrice() {
             total += productInfo.price * quantity;
         }
     }
-    return total;}
+    return total;
+}
+
+
+addToCart("milk");
+addToCart("bread");
+addToCart("honey");
+addToCart("honey"); 
+
 
 const totalCost = calculateTotalPrice();
 console.log(`Total cost: $${totalCost}`);
 
-const viewCart = addToCart()
-console.log(viewCart)
+
+console.log("Cart:", cart);

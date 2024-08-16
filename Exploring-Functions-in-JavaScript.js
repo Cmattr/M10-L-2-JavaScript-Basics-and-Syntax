@@ -1,4 +1,3 @@
-
 let balance = 0; 
 let accountNumber = "1234567890"; // Example account number
 
@@ -17,10 +16,10 @@ function Withdraw(withdraw_amount) {
 }
 
 function Balance() {
-    console.log(`Account ${accountNumber} balance: $${balance}`);
+    return `Account ${accountNumber} balance: $${balance}`;
 }
 
-
+// Example usage:
 Deposit(100);  // Deposits $100
 Withdraw(50);  // Withdraws $50
-Balance();     // Prints balance
+console.log(Balance()); // Logs the balance by calling the Balance function and logging its return value
